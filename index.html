@@ -279,6 +279,8 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
   border-bottom:1px dotted #79aefb;
 }
 .definition-card .source-ref a:hover{color:#7af3bb;border-bottom-color:#7af3bb}
+/* References are kept out of the student-facing presentation. */
+.source-ref{display:none!important}
 </style>
 
 </head>
@@ -722,6 +724,37 @@ function ioDemo(b){b.parentElement.querySelector('b').textContent='Hello Ahmed �
 function toggleBool(b){let x=b.dataset.state!=='true';b.dataset.state=x;b.textContent=x?'TRUE ✓':'FALSE ✕';b.style.color=x?'#7af3bb':'#ff7885'}
 function conditionDemo(b){let x=b.parentElement.querySelector('b');x.textContent=x.textContent==='Welcome ✓'?'Access Denied ✕':'Welcome ✓'}
 function loopDemo(b){let x=b.parentElement.querySelector('b');x.textContent='';['👏','👏','👏'].forEach((v,i)=>setTimeout(()=>x.textContent+=(i?' → ':'')+v,i*400))}
+</script>
+<script>
+/* Student-friendly Arabic definitions: same concepts, simpler wording. */
+const simpleDefinitions={
+  s1:'المعلومات هي كلمات أو صور أو أصوات لها معنى لنا. الكمبيوتر يحوّلها إلى بيانات رقمية حتى يفهمها ويخزنها.',
+  s2:'البِت أصغر جزء من البيانات في الكمبيوتر، وله قيمتان فقط: 0 أو 1. وكل ما في الكمبيوتر يتكوّن من 0 و1.',
+  s3:'ترميز الأحرف يعني أن كل حرف له رقم خاص به؛ لذلك يفهم الكمبيوتر الحروف ويخزنها ويرسلها بشكل صحيح.',
+  s4:'ASCII يغطّي حروف الإنجليزية والأرقام والرموز الأساسية. أما Unicode فيدعم حروف لغات كثيرة، مثل العربية.',
+  s5:'النظام السداسي عشر طريقة لكتابة الأرقام باستخدام 0 إلى 9 والحروف A إلى F. نستخدمه لأنه أقصر من كتابة أرقام ثنائية طويلة.',
+  s6:'الخوارزمية هي خطوات مرتبة وواضحة نتبعها لنحل مشكلة أو ننجز مهمة.',
+  s7:'الكود هو التعليمات التي نكتبها للكمبيوتر حتى يعرف ماذا يفعل.',
+  s8:'لغة البرمجة هي اللغة التي نكتب بها أوامر يفهمها الكمبيوتر وينفذها.',
+  s9:'الأمر print() يجعل الكمبيوتر يعرض كلمة أو رقمًا على الشاشة.',
+  s10:'النص نكتبه بين علامتي تنصيص. أما الأرقام فيمكننا إجراء عمليات حسابية عليها.',
+  s11:'المتغير مثل صندوق له اسم، نضع فيه قيمة ونستخدمها بعد ذلك.',
+  new1:'المدخلات هي ما ندخله إلى الكمبيوتر، مثل الكتابة من لوحة المفاتيح. والمخرجات هي ما يعرضه لنا الكمبيوتر، مثل النتيجة على الشاشة.',
+  new2:'نوع البيانات يوضح للكمبيوتر نوع القيمة: هل هي نص أم رقم أم صح أو خطأ؟',
+  new3:'Boolean نوع بيانات له احتمالان فقط: True بمعنى صح، أو False بمعنى خطأ.',
+  new4:'الشرط يجعل البرنامج يختار ماذا يفعل: إذا كان الشرط True ينفّذ أمرًا، وإذا لم يكن صحيحًا ينفّذ أمرًا آخر.',
+  new5:'الـLoop تجعل البرنامج يكرر نفس التعليمات أكثر من مرة دون أن نكتبها كل مرة.',
+  s12:'Debugging يعني أن نبحث عن الخطأ في الكود، نعرف سببه، ثم نصلحه.',
+  s13:'الأمن السيبراني يعني حماية أجهزتنا وحساباتنا وبياناتنا من الاختراق أو الاستخدام غير المسموح.',
+  s14:'التشفير يحوّل البيانات إلى شكل لا يفهمه إلا الشخص المسموح له، حتى تبقى آمنة.',
+  s15:'التحقق من الهوية يعني أن النظام يتأكد أن الشخص الذي يدخل هو صاحب الحساب فعلًا.',
+  s16:'أمان الشبكات يحمي الأجهزة والبيانات أثناء الاتصال. والـFirewall يقرر ما الذي يسمح له بالمرور وما الذي يمنعه.'
+};
+Object.entries(simpleDefinitions).forEach(([id,text])=>{
+  const definition=document.querySelector(`#${id} .definition-card .ar`);
+  if(definition) definition.innerHTML=`<strong>التعريف:</strong> ${text}`;
+});
+document.querySelectorAll('.source-ref').forEach(reference=>reference.remove());
 </script>
 <div class="site-brand-badge">
   <strong>M/R Mahmoud Diab</strong>
