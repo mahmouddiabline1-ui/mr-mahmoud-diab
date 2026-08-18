@@ -42,6 +42,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 .depth-demo{position:relative;width:140px;height:140px} .ring{position:absolute;border:2px solid #4fd1ff;border-radius:50%;inset:0;animation:ring 3s infinite} .r2{inset:20px;animation-delay:.5s} .r3{inset:40px;animation-delay:1s} .core{position:absolute;inset:55px 45px;display:grid;place-items:center;background:#fff;color:#000;border-radius:50%;font-weight:900} @keyframes ring{50%{box-shadow:0 0 22px rgba(79,209,255,.45);transform:scale(1.04)}}
 .challenge-demo{display:flex;gap:8px;flex-wrap:wrap;justify-content:center} #zoneStatus{width:100%;text-align:center;color:#7af3bb;margin-top:8px}
 .data-demo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%} .data-demo span{padding:12px;text-align:center;background:#0c1725;border-radius:10px;animation:datafly 3s infinite} .processor{grid-column:1/-1;text-align:center;padding:12px;background:white;color:black;border-radius:10px;font-weight:900} @keyframes datafly{50%{transform:translateY(8px);box-shadow:0 0 18px #4fd1ff}}
+.data-demo button{padding:12px;border-radius:10px;border:1px solid #31516e;background:#0c1725;color:#fff;font-weight:800;cursor:pointer}
 @media(max-width:980px){html{scroll-snap-type:y proximity}.slide{height:auto;min-height:100vh;grid-template-columns:1fr;padding:48px 22px}.visual{height:38vh;min-height:300px;order:-1}h2{font-size:38px}}
 </style>
 <style>
@@ -307,10 +308,10 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 <section class="slide" id="s1">
   <div class="content">
     <div class="number">01</div>
-    <h2>From Human Information to Digital Data<br><span>من المعلومات البشرية إلى البيانات الرقمية</span></h2>
+    <h2>Information & Digital Data<br><span>المعلومات والبيانات الرقمية</span></h2>
     <div class="definition-card">
-      <p class="en"><strong>Definition:</strong> Information is anything meaningful that humans communicate or store — words, pictures, or sounds. Computers convert this information into digital data so it can be stored and processed.</p>
-      <p class="ar"><strong>التعريف:</strong> المعلومات هي أي شيء له معنى بالنسبة للإنسان مثل الكلمات والصور والأصوات. الكمبيوتر يحول هذه المعلومات إلى بيانات رقمية حتى يستطيع تخزينها ومعالجتها.</p>
+      <p class="en"><strong>Information:</strong> meaningful words, pictures, or sounds. <strong>Digital data:</strong> the form a computer uses to store and process that information.</p>
+      <p class="ar"><strong>المعلومات:</strong> كلمات أو صور أو أصوات لها معنى لنا. <strong>البيانات الرقمية:</strong> الشكل الذي يحوّل إليه الكمبيوتر هذه المعلومات حتى يخزنها ويعالجها.</p>
     </div>
     
 <div class="examples-card lesson-carousel" data-slide="1">
@@ -332,7 +333,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
   </div>
   <div class="car-dots"><span class="active"></span><span></span></div>
 </div>
-    <div class="live-demo"><div class="data-demo"><span>TEXT</span><span>IMAGE</span><span>SOUND</span><div class="processor">COMPUTER</div></div></div>
+    <div class="live-demo"><div class="data-demo"><button onclick="showInformation(this,'WORD','كلمة: Hello','01001000 01101001')">WORD</button><button onclick="showInformation(this,'PICTURE','صورة: Pixel','10110100 00101101')">PICTURE</button><button onclick="showInformation(this,'SOUND','صوت: Voice note','11001010 01110001')">SOUND</button><div class="processor" id="informationResult">اختر مثالًا لترى كيف يتحول إلى بيانات رقمية</div></div></div>
   </div>
   <div class="visual">
     <img src="https://www.cloud.it/.imaging/mte/cloud/1776x754/dam/cloud/public-cloud/storage/perche-hub-storage.webp/jcr%3Acontent/perche-hub-storage.webp" alt="From Human Information to Digital Data">
@@ -368,7 +369,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
   </div>
   <div class="car-dots"><span class="active"></span><span></span></div>
 </div>
-    <div class="live-demo"><div class="binary-demo"><div class="binary-box"><span id="binaryVal">0</span></div><div class="binary-state">OFF ↔ ON</div></div></div>
+    <div class="live-demo"><div class="binary-demo"><div class="binary-box"><span id="binaryVal">0</span></div><div class="binary-state" id="binaryState">OFF</div></div></div>
   </div>
   <div class="visual">
     <img src="assets/images/bit-binary.png" alt="Bit and Binary illustration showing 0 as off and 1 as on">
@@ -412,45 +413,10 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
   </div>
 </section>
 
-<section class="slide" id="s4">
-  <div class="content">
-    <div class="number">04<div class="source-ref">Source: <a href="https://www.unicode.org/standard/standard.html" target="_blank" rel="noopener">Unicode Consortium — Unicode Standard</a></div></div>
-    <h2>ASCII & Unicode<br><span>ASCII و Unicode</span></h2>
-    <div class="definition-card">
-      <p class="en"><strong>Definition:</strong> ASCII is a limited character encoding standard mainly covering English letters, numbers, and symbols. Unicode is designed to represent characters from many languages and writing systems.</p>
-      <p class="ar"><strong>التعريف:</strong> ASCII معيار ترميز محدود نسبيًا يغطي أساسًا الإنجليزية والأرقام والرموز، بينما Unicode صُمم لتمثيل حروف لغات كثيرة ومنها العربية.</p>
-    </div>
-    
-<div class="examples-card lesson-carousel" data-slide="4">
-  <div class="carousel-head">
-    <button class="car-btn car-prev" onclick="lessonCarousel(this,-1)" aria-label="Previous">‹</button>
-    <div class="car-title">Explanation & Examples — الشرح والأمثلة</div>
-    <button class="car-btn car-next" onclick="lessonCarousel(this,1)" aria-label="Next">›</button>
-  </div>
-  <div class="car-track">
-    <div class="car-panel active">
-      <div class="panel-kicker">Explanation — شرح مبسط</div>
-      <p class="car-en">ASCII and Unicode are standards for representing characters. ASCII is limited, while Unicode supports many languages and symbols, including Arabic.</p>
-      <p class="car-ar">ASCII وUnicode معايير لتمثيل الأحرف. ASCII محدود نسبيًا، بينما Unicode يدعم لغات ورموزًا كثيرة ومنها العربية.</p>
-    </div>
-    <div class="car-panel">
-      <div class="panel-kicker">Examples / أمثلة</div>
-      <ul><li><span class='ex-en'>ASCII works for basic English letters, digits and symbols.</span><span class='ex-ar'>مثال: A, B, 1, 2, @ يمكن تمثيلها في ASCII.</span></li><li><span class='ex-en'>Unicode supports Arabic characters and many other scripts.</span><span class='ex-ar'>مثال يومي: كتابة «محمد» أو «مرحبا» على مواقع وأجهزة مختلفة.</span></li><li><span class='ex-en'>One common standard lets devices exchange many languages correctly.</span><span class='ex-ar'>مثال: ملف فيه عربي وإنجليزي وإيموجي يظهر بصورة صحيحة على أجهزة مختلفة.</span></li></ul>
-    </div>
-  </div>
-  <div class="car-dots"><span class="active"></span><span></span></div>
-</div>
-    <div class="live-demo"><div class="unicode-demo"><span>Hello</span><span>مرحبا</span><span>你好</span><span>Bonjour</span><b>UNICODE</b></div></div>
-  </div>
-  <div class="visual">
-    <img src="assets/images/ascii-unicode.png" alt="ASCII and Unicode illustration with multiple writing systems">
-    <div class="visual-title">ASCII & Unicode</div>
-  </div>
-</section>
 
 <section class="slide" id="s5">
   <div class="content">
-    <div class="number">05</div>
+    <div class="number">04</div>
     <h2>Hexadecimal<br><span>النظام السداسي عشر</span></h2>
     <div class="definition-card">
       <p class="en"><strong>Definition:</strong> Hexadecimal is a base-16 number system that uses 0–9 and A–F. It is often used as a shorter human-friendly representation of long binary values.</p>
@@ -486,7 +452,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 
 <section class="slide" id="s6">
   <div class="content">
-    <div class="number">06<div class="source-ref">Source: <a href="https://csrc.nist.gov/glossary/term/algorithm" target="_blank" rel="noopener">NIST CSRC — Algorithm</a></div></div>
+    <div class="number">05<div class="source-ref">Source: <a href="https://csrc.nist.gov/glossary/term/algorithm" target="_blank" rel="noopener">NIST CSRC — Algorithm</a></div></div>
     <h2>Algorithm<br><span>الخوارزمية</span></h2>
     <div class="definition-card">
       <p class="en"><strong>Definition:</strong> An Algorithm is a clear and ordered set of steps used to solve a problem or complete a task.</p>
@@ -522,7 +488,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 
 <section class="slide" id="s7">
   <div class="content">
-    <div class="number">07</div>
+    <div class="number">06</div>
     <h2>What is Code?<br><span>يعني إيه كود؟</span></h2>
     <div class="definition-card">
       <p class="en"><strong>Definition:</strong> Code is a set of instructions written in a programming language to tell a computer exactly what to do.</p>
@@ -790,6 +756,21 @@ function lessonCarousel(btn,dir){
 </script>
 <script>
 function ioDemo(b){b.parentElement.querySelector('b').textContent='Hello Ahmed 👋'}
+function showInformation(button,type,label,binary){
+  const result=document.getElementById('informationResult');
+  result.textContent=type+' → '+label+' → '+binary;
+  button.parentElement.querySelectorAll('button').forEach(b=>b.style.borderColor='#31516e');
+  button.style.borderColor='#7af3bb';
+}
+let binaryOn=false;
+setInterval(()=>{
+  binaryOn=!binaryOn;
+  const value=document.getElementById('binaryVal'),state=document.getElementById('binaryState');
+  if(!value||!state)return;
+  value.textContent=binaryOn?'1':'0';
+  state.textContent=binaryOn?'ON':'OFF';
+  state.style.color=binaryOn?'#7af3bb':'#9edfff';
+},1200);
 function toggleBool(b){let x=b.dataset.state!=='true';b.dataset.state=x;b.textContent=x?'TRUE ✓':'FALSE ✕';b.style.color=x?'#7af3bb':'#ff7885'}
 function conditionDemo(b){let x=b.parentElement.querySelector('b');x.textContent=x.textContent==='Welcome ✓'?'Access Denied ✕':'Welcome ✓'}
 function loopDemo(b){let x=b.parentElement.querySelector('b');x.textContent='';['👏','👏','👏'].forEach((v,i)=>setTimeout(()=>x.textContent+=(i?' → ':'')+v,i*400))}
