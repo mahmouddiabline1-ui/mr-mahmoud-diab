@@ -293,6 +293,12 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 .translation-flow{grid-template-columns:repeat(5,1fr);align-items:center}.flow-step{min-height:105px;display:grid;place-items:center}.flow-arrow{text-align:center;font-size:30px;color:#7af3bb;direction:ltr}.translation-flow .flow-step{position:relative}.translation-flow .flow-step:nth-child(2){grid-column:2}.translation-flow .flow-step:nth-child(4){grid-column:4}.translation-flow .flow-step:nth-child(6){grid-column:6}.translation-flow .flow-step:nth-child(8){grid-column:8}.translation-flow .flow-step:nth-child(10){grid-column:10}.translation-flow{grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr}
 .syntax-editor{width:100%;background:#050b13;border:1px solid #2c4968;border-radius:16px;padding:14px;direction:ltr;text-align:left;font-family:Consolas,monospace}.syntax-line{margin:8px 0;color:#dbe8f4}.syntax-line.good{border-color:#65e2a7;color:#91f4c6}.syntax-line.bad{border-color:#ff7885;color:#ffabb3}.syntax-editor button{margin-top:8px;border:0;border-radius:9px;padding:9px 13px;background:#7af3bb;color:#04100c;font-weight:900;cursor:pointer}.syntax-result{display:none;margin-top:10px;padding:10px;border-radius:9px;background:#35131b;color:#ffc4cb;line-height:1.6}.syntax-result.show{display:block}
 @media(max-width:980px){.program-path,.comparison-grid,.tool-grid{grid-template-columns:1fr}.translation-flow{grid-template-columns:1fr;direction:rtl}.translation-flow .flow-step{grid-column:auto!important}.translation-flow .flow-arrow{transform:rotate(90deg)}.level-card{min-height:0}}
+
+/* Local visual replacements for expired external Canva image links */
+.reliable-figure{height:100%;min-height:300px;display:grid;place-items:center;position:relative;z-index:1;padding:34px;background:radial-gradient(circle at 50% 35%,#173255,#08111d 65%)}
+.reliable-figure .figure-card{border:1px solid #4a8cbc;border-radius:18px;background:#091827e8;box-shadow:0 14px 40px #0008;padding:20px;text-align:center}
+.binary-art{grid-template-columns:repeat(2,115px);gap:18px}.binary-art .bit{font:900 64px/1 Consolas;color:#7af3bb}.binary-art small{display:block;margin-top:9px;color:#dce9f5}.encoding-art{grid-template-columns:repeat(5,max-content);gap:11px;direction:ltr}.encoding-art .figure-card{font:800 28px Consolas;color:#80d9ff}.encoding-art .arrow{font-size:30px;color:#7af3bb}.unicode-art{grid-template-columns:repeat(2,1fr);gap:12px;max-width:390px}.unicode-art .figure-card{font-size:25px;color:#fff}.unicode-art .wide{grid-column:1/-1;color:#7af3bb;font-weight:900}.hex-art{grid-template-columns:1fr 100px;gap:18px}.hex-art code{font:900 36px Consolas;color:#ffcf6f}.hex-art .color-block{width:100px;height:100px;border-radius:18px;background:#f00;box-shadow:0 0 36px #f004}.algorithm-art{grid-template-columns:repeat(4,1fr);gap:10px;max-width:430px}.algorithm-art .figure-card{font-weight:800;color:#dbeaff}.algorithm-art .figure-card:nth-child(odd){border-color:#7af3bb}.algorithm-art .figure-card:nth-child(even){border-color:#80b6ff}
+@media(max-width:980px){.reliable-figure{min-height:280px}.encoding-art{grid-template-columns:repeat(3,max-content)}.encoding-art .arrow{display:none}.algorithm-art{grid-template-columns:repeat(2,1fr)}}
 </style>
 
 </head>
@@ -365,7 +371,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
     <div class="live-demo"><div class="binary-demo"><div class="binary-box"><span id="binaryVal">0</span></div><div class="binary-state">OFF ↔ ON</div></div></div>
   </div>
   <div class="visual">
-    <img src="https://media.canva.com/v2/image-resize/format:PNG/height:132/quality:100/uri:ifs%3A%2F%2FM%2Fa1641963-cf63-41b4-8f76-1fb46857d11c/watermark:F/width:200?csig=AAAAAAAAAAAAAAAAAAAAAKeEINxWeNVTedxUV4yVveGUSFFCCDNpb61Zfoy2cvn9&exp=1787007073&osig=AAAAAAAAAAAAAAAAAAAAADjWNmY0XcD9Qf9NUuJm1hhUbBygF1xXoHpfPhpqagvy&signer=media-rpc&x-canva-quality=thumbnail" alt="Bit & Binary">
+    <div class="reliable-figure binary-art" aria-label="Bit and binary illustration"><div class="figure-card"><div class="bit">0</div><small>OFF</small></div><div class="figure-card"><div class="bit">1</div><small>ON</small></div></div>
     <div class="visual-title">Bit & Binary</div>
   </div>
 </section>
@@ -401,7 +407,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
     <div class="live-demo"><div class="encoding-demo"><span class="enc-item">A</span><span class="enc-arrow">→</span><span class="enc-item delay1">65</span><span class="enc-arrow delay1">→</span><span class="enc-item delay2">01000001</span></div></div>
   </div>
   <div class="visual">
-    <img src="https://media.canva.com/v2/image-resize/format:PNG/height:94/quality:100/uri:ifs%3A%2F%2FM%2F54981db1-068d-4863-8dfa-a3c88c0a4356/watermark:F/width:200?csig=AAAAAAAAAAAAAAAAAAAAALtvKonkIa7CCnBnqnINYIoWHDyu4QAw66YfiCARL1Rt&exp=1787005979&osig=AAAAAAAAAAAAAAAAAAAAAOBaiaoAzTKf-1qf0Vi6O-dn5kFNKasQmnnS8f9bwCyn&signer=media-rpc&x-canva-quality=thumbnail" alt="Character Encoding">
+    <div class="reliable-figure encoding-art" aria-label="Character encoding illustration"><div class="figure-card">A</div><div class="arrow">→</div><div class="figure-card">65</div><div class="arrow">→</div><div class="figure-card">01000001</div></div>
     <div class="visual-title">Character Encoding</div>
   </div>
 </section>
@@ -437,7 +443,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
     <div class="live-demo"><div class="unicode-demo"><span>Hello</span><span>مرحبا</span><span>你好</span><span>Bonjour</span><b>UNICODE</b></div></div>
   </div>
   <div class="visual">
-    <img src="https://media.canva.com/v2/image-resize/format:PNG/height:94/quality:100/uri:ifs%3A%2F%2FM%2F54981db1-068d-4863-8dfa-a3c88c0a4356/watermark:F/width:200?csig=AAAAAAAAAAAAAAAAAAAAALtvKonkIa7CCnBnqnINYIoWHDyu4QAw66YfiCARL1Rt&exp=1787005979&osig=AAAAAAAAAAAAAAAAAAAAAOBaiaoAzTKf-1qf0Vi6O-dn5kFNKasQmnnS8f9bwCyn&signer=media-rpc&x-canva-quality=thumbnail" alt="ASCII & Unicode">
+    <div class="reliable-figure unicode-art" aria-label="ASCII and Unicode illustration"><div class="figure-card">A&nbsp; 1&nbsp; @</div><div class="figure-card">مرحبا&nbsp; 你好&nbsp; 😀</div><div class="figure-card wide">ASCII &nbsp; → &nbsp; Unicode</div></div>
     <div class="visual-title">ASCII & Unicode</div>
   </div>
 </section>
@@ -473,7 +479,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
     <div class="live-demo"><div class="hex-demo"><code>#FF0000</code><div class="red-swatch"></div></div></div>
   </div>
   <div class="visual">
-    <img src="https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2F989e93b0-bc7c-4135-bd7e-4a76d315da96/watermark:F/width:185?csig=AAAAAAAAAAAAAAAAAAAAAALxvyjlwE6We6ukz06jKogVUPfGHatgF8nwKkY8-gNk&exp=1787007830&osig=AAAAAAAAAAAAAAAAAAAAAJACs6iFU0E3dS2hefy1wzlt1wgrGmPiwIwpAx0DvPKD&signer=media-rpc&x-canva-quality=thumbnail" alt="Hexadecimal">
+    <div class="reliable-figure hex-art" aria-label="Hexadecimal color illustration"><div class="figure-card"><code>#FF0000</code><small>Hex color code</small></div><div class="color-block" aria-hidden="true"></div></div>
     <div class="visual-title">Hexadecimal</div>
   </div>
 </section>
@@ -509,7 +515,7 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
     <div class="live-demo"><div class="algo-demo"><span>Boil water</span><i>→</i><span>Add tea</span><i>→</i><span>Wait</span><i>→</i><span>Serve</span></div></div>
   </div>
   <div class="visual">
-    <img src="https://media.canva.com/v2/image-resize/format:PNG/height:92/quality:100/uri:ifs%3A%2F%2FM%2Ff51e9f8a-a75f-45f1-b62b-f80a93b9eeca/watermark:F/width:200?csig=AAAAAAAAAAAAAAAAAAAAAIaD5QeSf_DBrWb_VVI1BkJjmTOwlz9ZbFaqP6W6BLzs&exp=1787006563&osig=AAAAAAAAAAAAAAAAAAAAACjYCmRR8-FzOCQiVvxMbTrF6CCPHYuRGZprHky3MpSO&signer=media-rpc&x-canva-quality=thumbnail" alt="Algorithm">
+    <div class="reliable-figure algorithm-art" aria-label="Algorithm steps illustration"><div class="figure-card">1<br><small>ابدأ</small></div><div class="figure-card">2<br><small>خطوة</small></div><div class="figure-card">3<br><small>خطوة</small></div><div class="figure-card">✓<br><small>نتيجة</small></div></div>
     <div class="visual-title">Algorithm</div>
   </div>
 </section>
