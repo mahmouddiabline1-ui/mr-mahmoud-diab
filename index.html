@@ -281,6 +281,18 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 .definition-card .source-ref a:hover{color:#7af3bb;border-bottom-color:#7af3bb}
 /* References are kept out of the student-facing presentation. */
 .source-ref{display:none!important}
+
+/* Programming foundations sequence */
+.programming-foundations .definition-card{max-width:760px}.programming-foundations .examples-card{max-width:760px}
+.program-path,.comparison-grid,.tool-grid,.translation-flow{width:100%;display:grid;gap:12px}
+.program-path{grid-template-columns:repeat(4,1fr);direction:ltr}.path-step,.level-card,.tool-card,.flow-step,.syntax-line{background:#091522;border:1px solid #2b4b69;border-radius:15px;padding:14px;text-align:center}
+.path-step b,.level-card h3,.tool-card b,.flow-step b{display:block;color:#7af3bb;margin-bottom:6px}.path-step small,.level-card p,.tool-card p,.flow-step small{color:#d9e5f2;line-height:1.55}
+.comparison-grid{grid-template-columns:1fr 1fr}.level-card{min-height:210px;text-align:right}.level-card.high{border-color:#55d7ff}.level-card.low{border-color:#a991ff}.level-card ul{margin:10px 0 0;padding-right:20px;line-height:1.9;color:#d9e5f2}
+.binary-board{direction:ltr;font:800 clamp(23px,3vw,42px) Consolas;color:#ffcf6f;letter-spacing:3px;padding:17px;border:1px solid #ffcf6f66;border-radius:14px;background:#0a111c;text-align:center}.reason-list{display:grid;gap:9px;margin-top:12px}.reason-list div{padding:10px 12px;border-right:3px solid #ff7885;background:#091522;border-radius:8px}
+.tool-grid{grid-template-columns:1fr 1fr}.tool-card{text-align:right;min-height:145px}.tool-card .tool-icon{font-size:32px;float:left;margin-right:10px}.ide-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;direction:ltr}.ide-pills span{border:1px solid #497aa7;background:#10243a;padding:7px 10px;border-radius:999px;color:#dcecff}
+.translation-flow{grid-template-columns:repeat(5,1fr);align-items:center}.flow-step{min-height:105px;display:grid;place-items:center}.flow-arrow{text-align:center;font-size:30px;color:#7af3bb;direction:ltr}.translation-flow .flow-step{position:relative}.translation-flow .flow-step:nth-child(2){grid-column:2}.translation-flow .flow-step:nth-child(4){grid-column:4}.translation-flow .flow-step:nth-child(6){grid-column:6}.translation-flow .flow-step:nth-child(8){grid-column:8}.translation-flow .flow-step:nth-child(10){grid-column:10}.translation-flow{grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr 32px 1fr}
+.syntax-editor{width:100%;background:#050b13;border:1px solid #2c4968;border-radius:16px;padding:14px;direction:ltr;text-align:left;font-family:Consolas,monospace}.syntax-line{margin:8px 0;color:#dbe8f4}.syntax-line.good{border-color:#65e2a7;color:#91f4c6}.syntax-line.bad{border-color:#ff7885;color:#ffabb3}.syntax-editor button{margin-top:8px;border:0;border-radius:9px;padding:9px 13px;background:#7af3bb;color:#04100c;font-weight:900;cursor:pointer}.syntax-result{display:none;margin-top:10px;padding:10px;border-radius:9px;background:#35131b;color:#ffc4cb;line-height:1.6}.syntax-result.show{display:block}
+@media(max-width:980px){.program-path,.comparison-grid,.tool-grid{grid-template-columns:1fr}.translation-flow{grid-template-columns:1fr;direction:rtl}.translation-flow .flow-step{grid-column:auto!important}.translation-flow .flow-arrow{transform:rotate(90deg)}.level-card{min-height:0}}
 </style>
 
 </head>
@@ -548,7 +560,58 @@ h2{font-size:clamp(38px,4vw,64px);line-height:1.04;color:#000;background:#fff;di
 <div class="translator"><div class="translator-title">🤖 Error Translator — مترجم الأخطاء</div><div class="error-en">Edit the code and press RUN.</div><div class="error-ar">عدّل الكود واضغط RUN. لو فيه خطأ هنشرح سببه بالعربي والإنجليزي.</div></div></div></div>
 <div class="visual"><div class="topic-figure code-fig" aria-label="Programming Language figure">
 <div class="mini-monitor"><div class="mini-screen"><span>&gt;_</span><b>Python</b></div></div>
-<div class="lang-chips"><span>PY</span><span>JS</span><span>C++</span></div></div><div class="visual-title">Programming Language</div></div></section><section class="slide coding-slide" id="s9">
+<div class="lang-chips"><span>PY</span><span>JS</span><span>C++</span></div></div><div class="visual-title">Programming Language</div></div></section>
+
+<section class="slide programming-foundations" id="prog-compare">
+  <div class="content"><div class="number">PROGRAMMING 01</div><h2>Programming vs Programming Language<br><span>الفرق بين البرمجة ولغة البرمجة</span></h2>
+    <div class="definition-card"><p class="en"><strong>Big idea:</strong> Programming is solving a problem with steps. A programming language is what we use to write those steps for a computer.</p><p class="ar"><strong>الفكرة ببساطة:</strong> البرمجة هي التفكير في حل المشكلة وكتابة خطواته. ولغة البرمجة هي اللغة التي نكتب بها هذه الخطوات للكمبيوتر.</p></div>
+    <div class="examples-card"><div class="comparison-grid"><div class="level-card high"><h3>Programming — البرمجة</h3><p>نفكر في الحل، نرتب الخطوات، ثم نكتب برنامجًا.</p><ul><li>مثال: خطوات تسجيل الدخول.</li><li>مثل التخطيط لرحلة قبل التحرك.</li></ul></div><div class="level-card low"><h3>Programming Language — لغة البرمجة</h3><p>كلمات وقواعد نستخدمها لكتابة هذه الخطوات.</p><div class="ide-pills"><span>Python</span><span>Java</span><span>JavaScript</span><span>C++</span></div></div></div></div>
+  </div><div class="visual"><div class="program-path"><div class="path-step"><b>💡 Idea</b><small>فكرة</small></div><div class="path-step"><b>🧭 Plan</b><small>خطوات</small></div><div class="path-step"><b>&lt;/&gt; Code</b><small>كود</small></div><div class="path-step"><b>🖥️ Result</b><small>نتيجة</small></div></div><div class="visual-title">Idea → Plan → Code</div></div>
+</section>
+
+<section class="slide programming-foundations" id="language-levels">
+  <div class="content"><div class="number">PROGRAMMING 02</div><h2>High-Level vs Low-Level Languages<br><span>لغات عالية المستوى ومنخفضة المستوى</span></h2>
+    <div class="definition-card"><p class="en"><strong>Definition:</strong> High-level languages are easier for people to read. Low-level languages are closer to how a computer works.</p><p class="ar"><strong>التعريف:</strong> اللغات عالية المستوى أسهل للإنسان في القراءة والتعلم. أما اللغات منخفضة المستوى فهي أقرب لطريقة عمل الكمبيوتر.</p></div>
+    <div class="examples-card"><div class="comparison-grid"><div class="level-card high"><h3>⬆ High-Level</h3><ul><li>أسهل في التعلم والقراءة.</li><li>نكتب فيها أوامر واضحة.</li><li>Python · Java · JavaScript</li></ul></div><div class="level-card low"><h3>⬇ Low-Level</h3><ul><li>أقرب للكمبيوتر.</li><li>أصعب في القراءة والتعلم.</li><li>Assembly · Machine Language</li></ul></div></div></div>
+  </div><div class="visual"><div class="binary-board">01001000 01101001</div><div class="program-path" style="margin-top:15px"><div class="path-step"><b>Python</b><small>أسهل للإنسان</small></div><div class="path-step"><b>Java</b><small>أسهل للإنسان</small></div><div class="path-step"><b>Assembly</b><small>أقرب للآلة</small></div><div class="path-step"><b>0 / 1</b><small>لغة الآلة</small></div></div><div class="visual-title">Human ↔ Computer</div></div>
+</section>
+
+<section class="slide programming-foundations" id="binary-why">
+  <div class="content"><div class="number">PROGRAMMING 03</div><h2>Why not write 0 and 1?<br><span>ليه لا نستخدم 0 و1 مباشرة؟</span></h2>
+    <div class="definition-card"><p class="en"><strong>Answer:</strong> Computers use 0 and 1, but writing every instruction this way would be difficult for people.</p><p class="ar"><strong>الإجابة:</strong> الكمبيوتر يفهم 0 و1، لكن كتابة كل أمر بهذه الطريقة صعبة جدًا على الإنسان؛ لذلك نستخدم لغات البرمجة.</p></div>
+    <div class="examples-card"><div class="reason-list"><div>👀 <strong>صعوبة القراءة:</strong> سلاسل طويلة من الأصفار والآحاد لا توضح المعنى بسهولة.</div><div>⌨️ <strong>صعوبة الكتابة:</strong> كتابة رقم واحد خطأ قد تغيّر النتيجة.</div><div>🐞 <strong>كثرة الأخطاء:</strong> اكتشاف الخطأ وسط أرقام كثيرة أصعب.</div></div></div>
+  </div><div class="visual"><div class="binary-board">01010000 01110010 01101001 01101110 01110100</div><div class="path-step" style="margin-top:18px"><b>print("Hello")</b><small>لغة برمجة أسهل للإنسان</small></div><div class="visual-title">0 & 1 are for the machine</div></div>
+</section>
+
+<section class="slide programming-foundations" id="code-where">
+  <div class="content"><div class="number">PROGRAMMING 04</div><h2>Where do we write code?<br><span>أين نكتب الكود؟</span></h2>
+    <div class="definition-card"><p class="en"><strong>Answer:</strong> Code is text, so it can be typed in a text editor. A code editor gives programmers more helpful tools.</p><p class="ar"><strong>الإجابة:</strong> الكود عبارة عن نص، لذلك يمكن كتابته في محرر نصوص. لكن محرر الأكواد أفضل لأنه يساعد المبرمج أثناء الكتابة.</p></div>
+    <div class="examples-card"><div class="tool-grid"><div class="tool-card"><span class="tool-icon">📄</span><b>Text editor — محرر نصوص</b><p>مثل Notepad: يكتب النص فقط، لكن لا يساعد كثيرًا في تشغيل الكود أو اكتشاف الأخطاء.</p></div><div class="tool-card"><span class="tool-icon">💻</span><b>Code editor — محرر أكواد</b><p>مثل VS Code: يلوّن الكود، يرتّبه، ويساعدك على ملاحظة الأخطاء.</p></div></div></div>
+  </div><div class="visual"><div class="syntax-editor"><div class="syntax-line good">print("Hello")</div><div class="syntax-line"># Code Editor helps you write this</div></div><div class="visual-title">Write code as text</div></div>
+</section>
+
+<section class="slide programming-foundations" id="ide">
+  <div class="content"><div class="number">PROGRAMMING 05</div><h2>IDE<br><span>بيئة تطوير متكاملة</span></h2>
+    <div class="definition-card"><p class="en"><strong>IDE:</strong> Integrated Development Environment — one place to write code, run it, and find errors.</p><p class="ar"><strong>IDE:</strong> اختصار لـIntegrated Development Environment، وهي بيئة تجمع كتابة الكود وتشغيله واكتشاف أخطائه في مكان واحد.</p></div>
+    <div class="examples-card"><div class="program-path"><div class="path-step"><b>✍️ Write</b><small>اكتب الكود</small></div><div class="path-step"><b>▶ Run</b><small>شغّله</small></div><div class="path-step"><b>🐞 Find errors</b><small>اكتشف الخطأ</small></div><div class="path-step"><b>✅ Fix</b><small>أصلحه</small></div></div><div class="ide-pills"><span>VS Code</span><span>PyCharm</span><span>IDLE</span></div></div>
+  </div><div class="visual"><div class="tool-card"><b>IDE</b><p style="font-size:20px">✍️ &nbsp; ▶ &nbsp; 🐞 &nbsp; ✅</p><p>كل أدوات المبرمج الأساسية في مكان واحد.</p></div><div class="visual-title">Integrated Development Environment</div></div>
+</section>
+
+<section class="slide programming-foundations" id="code-translation">
+  <div class="content"><div class="number">PROGRAMMING 06</div><h2>How does the computer understand code?<br><span>إزاي الكمبيوتر يفهم الكود؟</span></h2>
+    <div class="definition-card"><p class="en"><strong>Process:</strong> A compiler or interpreter translates our code into a form the computer can execute.</p><p class="ar"><strong>العملية:</strong> الـCompiler أو الـInterpreter يترجم الكود الذي نكتبه إلى شكل يستطيع الكمبيوتر تنفيذه.</p></div>
+    <div class="examples-card"><p class="ar">أنت تكتب بلغة سهلة عليك، ثم تتم الترجمة إلى لغة الآلة، وبعدها ينفّذ الكمبيوتر الأوامر ويظهر النتيجة.</p></div>
+  </div><div class="visual"><div class="translation-flow"><div class="flow-step"><b>✍️ كتابة الكود</b><small>print("Hello")</small></div><div class="flow-arrow">←</div><div class="flow-step"><b>🔄 ترجمة</b><small>Compiler / Interpreter</small></div><div class="flow-arrow">←</div><div class="flow-step"><b>0 · 1</b><small>لغة الآلة</small></div><div class="flow-arrow">←</div><div class="flow-step"><b>⚙️ تنفيذ</b><small>يعالج الكمبيوتر الأمر</small></div><div class="flow-arrow">←</div><div class="flow-step"><b>🖥️ النتيجة</b><small>Hello</small></div></div><div class="visual-title">Code → Translation → Result</div></div>
+</section>
+
+<section class="slide programming-foundations" id="syntax">
+  <div class="content"><div class="number">PROGRAMMING 07</div><h2>Syntax<br><span>قواعد كتابة الكود</span></h2>
+    <div class="definition-card"><p class="en"><strong>Definition:</strong> Syntax is the set of writing rules for a programming language, like word order and punctuation in a sentence.</p><p class="ar"><strong>التعريف:</strong> الـSyntax هو قواعد كتابة الكود؛ مثل ترتيب الكلمات والأقواس وعلامات التنصيص. لو قاعدة ناقصة، الكمبيوتر لا يفهم الأمر.</p></div>
+    <div class="examples-card"><p class="ar">مثال: في Python يجب أن تُغلق علامة التنصيص والقوس كما فتحتهما.</p></div>
+  </div><div class="visual"><div class="syntax-editor"><div class="syntax-line good">✓ print("Hello")</div><div class="syntax-line bad">✕ print("Hello)</div><button onclick="checkSyntax(this)">Check the code — افحص الكود</button><div class="syntax-result"></div></div><div class="visual-title">Correct syntax matters</div></div>
+</section>
+
+<section class="slide coding-slide" id="s9">
 <div class="content"><div class="number">09<div class="source-ref">Source: <a href="https://docs.python.org/3/library/functions.html#print" target="_blank" rel="noopener">Python Documentation — Built-in Functions</a></div></div><h2>Your First Code: print()<br><span>أول كود: الطباعة</span></h2>
 <div class="definition-card"><p class="en"><strong>Definition:</strong> The print() command displays text or values on the screen.</p><p class="ar"><strong>التعريف:</strong> الأمر print() بيخلّي الكمبيوتر يعرض نص أو قيمة على الشاشة.</p></div>
 <div class="examples-card"><strong>Examples / أمثلة</strong><ul><li><span class='ex-en'>print("Hello") displays Hello.</span><span class='ex-ar'>مثال: اطبع كلمة Hello على الشاشة.</span></li><li><span class='ex-en'>Live demo: delete ) or one quotation mark and press RUN.</span><span class='ex-ar'>تجربة قدام الطلبة: امسح ) أو علامة تنصيص وشوف رسالة الخطأ.</span></li></ul></div>
@@ -724,6 +787,11 @@ function ioDemo(b){b.parentElement.querySelector('b').textContent='Hello Ahmed �
 function toggleBool(b){let x=b.dataset.state!=='true';b.dataset.state=x;b.textContent=x?'TRUE ✓':'FALSE ✕';b.style.color=x?'#7af3bb':'#ff7885'}
 function conditionDemo(b){let x=b.parentElement.querySelector('b');x.textContent=x.textContent==='Welcome ✓'?'Access Denied ✕':'Welcome ✓'}
 function loopDemo(b){let x=b.parentElement.querySelector('b');x.textContent='';['👏','👏','👏'].forEach((v,i)=>setTimeout(()=>x.textContent+=(i?' → ':'')+v,i*400))}
+function checkSyntax(button){
+  const result=button.closest('.syntax-editor').querySelector('.syntax-result');
+  result.textContent='Syntax Error: علامة التنصيص الأخيرة مفقودة. اكتبها هكذا: print("Hello")';
+  result.classList.add('show');
+}
 </script>
 <script>
 /* Student-friendly Arabic definitions: same concepts, simpler wording. */
